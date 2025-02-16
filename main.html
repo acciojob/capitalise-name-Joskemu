@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Name</title>
+</head>
+<body>
+    <!-- Input for the user's name -->
     Enter your name: <input type="text" id="fname">
-	
-	<script type="text/javascript" src="./script.js">
-	</script>
-  </body>
+
+    <!-- Button to trigger the action -->
+    <button onclick="displayMessage()">Submit</button>
+
+    <!-- Paragraph to show the result -->
+    <p id="greetingMessage"></p>
+
+    <script type="text/javascript">
+        // Function to display the greeting message
+        function displayMessage() {
+            // Get the value entered by the user
+            var name = document.getElementById("fname").value;
+
+            // Check if the input is empty or not
+            if (name.trim() === "") {
+                document.getElementById("greetingMessage").textContent = "Please enter a name.";
+            } else {
+                // Display a personalized greeting message
+                document.getElementById("greetingMessage").textContent = "Hello, " + name + "!";
+            }
+        }
+    </script>
+</body>
 </html>
