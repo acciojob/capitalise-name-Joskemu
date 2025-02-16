@@ -1,7 +1,5 @@
-//your JS code here. If required.
-it('types and checks the input value in uppercase', () => {
-  cy.visit(baseUrl); // Visit your URL where this HTML is hosted
-  cy.get('#fname').type('jOhN dOe');
-  cy.get('body').click(); // Blur the input field
-  cy.get('#fname').should('have.value', 'JOHN DOE'); // Ensure the value is uppercase
+// Adding an event listener to the input field for the 'blur' event
+document.getElementById("fname").addEventListener("blur", function() {
+  // Convert the value of the input field to uppercase when the user leaves the input field
+  this.value = this.value.toUpperCase();
 });
